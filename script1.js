@@ -58,7 +58,7 @@ document.getElementById("template").style.display='block';
 
 
 function addNewSkill(){
-let newNode=document.createElement("text");
+let newNode=document.createElement("input");
 newNode.classList.add("form-control");
 newNode.classList.add("addskill");
 newNode.classList.add("mt-2");
