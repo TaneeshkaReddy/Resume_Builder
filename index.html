@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <!-- Link to css sheet -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/final.css" />
+    <!-- link bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- link to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <script src="script1.js"></script>
+
+    <div  id="form">
+    <div class="first-part">
+    <section id="heading">
+      <h1>Resume Builder</h1>
+    </section>
+  </div>
+
+    <section id="form-area" class="main-area">
+      <form onsubmit="return false">
+        <h4>Personal Details:</h4>
+
+        <div class="mb-3">
+          <label for="exampleinputname" class="form-label">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            id="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Tell us a bit about yourself:</label>
+          <textarea class="form-control" id="yourself" placeholder="Enter here!" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@gmail.com"
+          />
+        </div>
+
+        <label>Phone Number:</label>
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping">+91</span>
+          <input type="text" class="form-control" placeholder="Phone Number" id="number">
+        </div>
+
+        <label>Gender:</label>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault1"
+          />
+          <label class="form-check-label" for="flexRadioDefault1"> Male </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+            checked
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+        </div>
+
+        <div class="mb-3 col-sm-5">
+          <label for="form-textarea" class="form-label">Date of Birth: </label>
+          <input
+            type="date"
+            class="form-control"
+            id="exampleFormControlInput1"
+          />
+        </div>
+
+        <h4>Educational Details:</h4>
+
+        <div class="mb-3">
+          <label for="exampleinputname" class="form-label"
+            >Educational Qualification:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Educational Qualification"
+            id="qual"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleinputname" class="form-label"
+            >Educational Institution:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name of your college!"
+            id="insti"
+          />
+        </div>
+
+        <div class="mb-3 col-sm-5">
+          <label for="form-textarea" class="Your Graduation year"
+            >Your Graduation Year:</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="year"
+            placeholder="eg: 2025"
+          />
+        </div>
+
+        <h5>Your skills and projects:</h5>
+
+        <div id="skaddbutton">
+        <h6>Skills:</h6>
+        <div class="mb-3">
+          <input type="textarea" rows="3" class="form-control addskill"  placeholder="Skill 1" id="skill" />
+        </div>
+        <button id="skillbutton" onclick="addNewSkill()" type="button" class="btn btn-sm btn-outline-dark">Another Skill</button>
+      </div>
+        
+        
+        <h6>Projects:</h6>
+        <label>A little description of your projects:</label>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Project 1"
+            id="project"
+          />
+        </div>
+
+        <button id="projectbutton" type="button" class="btn btn-sm btn-outline-dark">Another Project</button>
+     
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1"><h6>Experience:</h6></label>
+          <textarea class="form-control" id="experience" placeholder="Enter here!" rows="3"></textarea>
+        </div>
+
+      
+
+        <h4>Links to your social profiles:</h4>
+
+        <div class="mb-3">
+          <label for="exampleinputname" class="form-label">LinkedIn:</label>
+          <input type="text" class="form-control" placeholder="LinkedIn URL" id="linkedin">
+      </div>
+      
+      <div class="mb-3">
+          <label for="exampleinputname" class="form-label">GitHub:</label>
+          <input type="text" class="form-control" placeholder="GitHub URL" id="github">
+      </div>
+        
+      <button id="submit" onclick="infochange()" class="btn btn-outline-dark btn-lg">Submit</button>
+    </section>
+  </div>
+
+
+  <!-- template -->
+
+  <div id="template">
+    <div class="row top-container">
+        <div class="nm col-md-6">
+            <div id="name1">SUKRUTI K</div>
+        </div>
+        <div class="det col-md-6">
+            <div class="disp-1">Phone Number</div>
+            <div id="number1">+91 2345678901</div>
+            <div class="disp-1">E-Mail</div>
+            <div id="email1">xyz@gmail.com</div>
+            <div class="disp-1">LinkedIn:</div>
+            <div id="linkedin1">https://www.linkedin.com</div>
+            <div class="disp-1">GitHub:</div>
+            <div id="github1">https://www.github.com</div>
+        </div>
+    </div>
+
+    <div class="middle-container">
+
+      <div class="disp-2">About Me:</div>
+      <hr>
+        <p id="yourself1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <hr>
+
+    <div class="edu" type="container">
+        <div class="disp-2">Educational Details:</div>
+        <hr>
+        <ul>
+    
+    
+    
+          <li>
+            <div class="disp-3">Qualifications:</div>
+            <div id="qual1">Bachelor in cse</div>
+          </li>
+            
+    
+    
+          <li>
+            <div class="disp-3">Institution:</div>
+            <div id="insti1">JSS MYSORE 57001</div>
+          </li>
+    
+    
+    
+          <li>
+            <div class="disp-3">Graduation Year:</div>
+            <div id="year1">2025</div>
+          </li>
+    
+        </ul>
+        
+        <hr><div class="disp-2">Skills And Projects:</div>
+        
+        <div class="skill">
+            <div class="disp-3">Skill Hightlights:</h4></div>
+            <ul id="skill1">
+                <li>Problem Solving</li>
+                <li>Project Management</li>
+                <li>Technical Knowledge</li>
+                <li>Creative Problem-Solving</li>
+                <li>Troubleshooting</li>
+                <li>Critical Thinking</li>
+            </ul>
+            
+        
+        
+        <div>
+        <div class="disp-3">Projects:</div>
+        <ul  id="project1">
+        <li>Notes and Password Manager</li>
+        <li>Student Result Management System</li>
+        <li>Quizup-A Quiz Application</li>
+        </ul>
+        </div>
+        <hr>
+
+        <div >
+          <div class="disp-2">Experience:</div>
+          <ul id="experience1">
+            <li>exp1</li>
+            <li>exp2</li>
+            <li>exp3</li>
+            
+        </ul>
+          </div>
+        
+    
+        <!-- <p class="social">
+            <h3>Links To Your Social Profiles:</h3>
+            <hr>
+          
+            <ul>
+              <li>
+                <h4>LinkedIn:</h4>
+                <div id="linkedin1">https://www.linkedin.com</div>
+              </li>
+          
+              <li>
+                <h4>GitHub:</h4>
+                <div id="instagram1">https://www.github.com</div>
+              </li>
+          
+          
+            </ul>
+           </p> -->
+
+
+    
+    
+    
+    
+      </div> 
+    </div>
+
+    <section >
+      <div class="bottom-container"></div>
+    </section>
+
+
+  </div>
+ 
+  </div>
+  
+  </body>
+</html>
