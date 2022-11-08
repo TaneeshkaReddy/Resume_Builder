@@ -145,5 +145,5 @@ function add(type) {
     input.appendChild(element);
   }
   document.getElementById("btnAdd").onclick = function() {
-    add("Enter here");
+    add("");
   };
