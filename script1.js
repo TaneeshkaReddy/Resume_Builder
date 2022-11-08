@@ -1,21 +1,22 @@
 function infochange(){
+
 var dname=document.getElementById("name");
 var dyourself=document.getElementById("yourself");
 var demail=document.getElementById("email");
 var dnumber=document.getElementById("number");
-var dqual=document.getElementById("qual");
-var dinsti=document.getElementById("insti");
-var dyear=document.getElementById("year");
+var ddegree=document.getElementById("degree");
+var dtwelth=document.getElementById("twelth");
+var dtenth=document.getElementById("tenth");
 var dskill=document.getElementById("skill");
 var dproject=document.getElementById("project");
 var dexperience=document.getElementById("experience");
 var dlinkedin=document.getElementById("linkedin");
 var dgithub=document.getElementById("github");
-  
+
 // var check
 if(dname.value.length == 0)
   {
-    alert("Please Enter name");
+    alert("Please Enter name*");
     return false;
     // check
     }
@@ -61,58 +62,101 @@ if(dname.value.length == 0)
         }
 
 
-        if(dqual.value.length == 0)
+        if(ddegree.value.length == 0)
         {
-          alert("Please Enter your qualifications*");
+          alert("Please Enter your degree details*");
           return false;
           // check
           }
           else{
-  var qual1=document.getElementById("qual1");
-  qual1.innerHTML=dqual.value;
+  var degree1=document.getElementById("degree1");
+  degree1.innerHTML=ddegree.value;
           }
 
-          if(dinsti.value.length == 0)
+          if(dtwelth.value.length == 0)
           {
-            alert("Please Enter the name of your institution");
+            alert("Please Enter Your 12th class details*");
             return false;
             // check
             }
             else{
-  var insti1=document.getElementById("insti1");
-  insti1.innerHTML=dinsti.value;
+  var twelth1=document.getElementById("twelth1");
+  twelth1.innerHTML=dtwelth.value;
             }
 
 
-            if(dyear.value.length == 0)
+            if(dtenth.value.length == 0)
             {
-              alert("Please Enter Year Of Graduation");
+              alert("Please Enter Your 10th class details*");
               return false;
               // check
               }
               else{
-  var year1=document.getElementById("year1");
-  year1.innerHTML=dyear.value;
+  var tenth1=document.getElementById("tenth1");
+  tenth1.innerHTML=dtenth.value;
+              }
+              
+              var skillarray=document.getElementsByClassName("addskill");
+              if(skillarray[0].value.length==0){
+                document.getElementById("skillremove").style.display='none';
+                }
+              else{
+              var str1="";
+              for( let e of skillarray){
+                str1=str1+`<li> ${e.value} </li>`;
+              }}
+              document.getElementById("skill1").innerHTML=str1;
+
+
+              var projectarray=document.getElementsByClassName("addproject");
+              if(projectarray[0].value.length==0){
+                document.getElementById("projectremove").style.display='none'; 
+              }
+              else{
+              var str2="";
+              for( let e of projectarray){
+                str2=str2+`<li> ${e.value} </li>`;
+              }}
+              document.getElementById("project1").innerHTML=str2;
+
+              
+              if(dexperience.value.length==0){
+                document.getElementById("experienceremove").style.display='none'; 
+              }
+              else{
+              var experience1=document.getElementById("experience1");
+                experience1.innerHTML=dexperience.value;
               }
 
-              var skill1=document.getElementById("skill1");
-              skill1.innerHTML=dskill.value;
-              var project1=document.getElementById("project1");
-               project1.innerHTML=dproject.value;
-               var experience1=document.getElementById("experience1");
-                experience1.innerHTML=dexperience.value;
-                var linkedin1=document.getElementById("linkedin1");
-               linkedin1.innerHTML=dlinkedin.value;
-               var github1=document.getElementById("github1");
+              
+              if(dlinkedin.value.length==0){
+                document.getElementById("linkedinremove").style.display='none'; 
+              }
+              else{
+              var linkedin1=document.getElementById("linkedin1");
+              linkedin1.innerHTML=dlinkedin.value;
+              }
+
+              
+              if(dgithub.value.length==0){
+                document.getElementById("githubremove").style.display='none'; 
+              }
+              else{
+              var github1=document.getElementById("github1");
               github1.innerHTML=dgithub.value;
+              }
+              
+               
+              
+               
 
   
 // if(check>)
 document.getElementById("form").style.display='none';
+
+
 document.getElementById("template").style.display='block';
 
-  
-  
 }
 
 
@@ -122,7 +166,8 @@ newNode.classList.add("form-control");
 newNode.classList.add("addskill");
 newNode.classList.add("mb-3");
 newNode.setAttribute("rows",10);
-newNode.setAttribute("placeholder","Enter Here");
+newNode.setAttribute("placeholder","Enter here");
+
 
 
 let sk1=document.getElementById("skaddbutton");
@@ -131,19 +176,21 @@ let skbutton=document.getElementById("skillbutton");
 sk1.insertBefore(newNode,skbutton);
 }
 
-function add(type) {
 
-    var element = document.createElement("input");
-    
-    element.type = type;
-    element.value = type;
-    element.name = type; 
+function addNewProject(){
+  let newprNode=document.createElement("input");
+newprNode.classList.add("form-control");
+newprNode.classList.add("addproject");
+newprNode.classList.add("mb-3");
+newprNode.setAttribute("rows",10);
+newprNode.setAttribute("placeholder","Enter here");
 
-  
-    var input = document.getElementById("skills");
-     
-    input.appendChild(element);
-  }
-  document.getElementById("btnAdd").onclick = function() {
-    add("");
-  };
+
+
+let pr1=document.getElementById("praddbutton");
+let prbutton=document.getElementById("projectbutton");
+
+pr1.insertBefore(newprNode,prbutton);
+
+}
+
