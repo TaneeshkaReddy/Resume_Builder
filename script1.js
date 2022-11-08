@@ -131,3 +131,19 @@ let skbutton=document.getElementById("skillbutton");
 sk1.insertBefore(newNode,skbutton);
 }
 
+function add(type) {
+
+    var element = document.createElement("input");
+    
+    element.type = type;
+    element.value = type;
+    element.name = type; 
+
+  
+    var input = document.getElementById("skills");
+     
+    input.appendChild(element);
+  }
+  document.getElementById("btnAdd").onclick = function() {
+    add("Enter here");
+  };
