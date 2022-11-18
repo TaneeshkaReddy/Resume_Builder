@@ -194,3 +194,8 @@ pr1.insertBefore(newprNode,prbutton);
 
 }
 
+
+function printcv(){
+  window.print();
+}
+
